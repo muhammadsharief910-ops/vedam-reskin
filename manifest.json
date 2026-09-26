@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Vedam LMS Reskin",
+  "version": "1.6.0",
+  "description": "A sleek dark theme for the Vedam School of Technology LMS — cleaner layout, better aesthetics.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://student.vedam.org/*",
+        "*://*.vedam.org/*"
+      ],
+      "css": ["content.css"],
+      "js": ["page-cursor-fix.js", "page-monaco-theme.js", "content.js", "page-all-files.js", "page-all-problems.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page-cursor-fix.js"],
+      "matches": [
+        "*://student.vedam.org/*",
+        "*://*.vedam.org/*"
+      ]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

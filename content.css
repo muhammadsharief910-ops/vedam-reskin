@@ -1,0 +1,2689 @@
+/*
+ * ============================================================
+ *  VEDAM LMS RESKIN — Dark Theme
+ *  Matches learn.vedam.org coding lab design exactly.
+ * ============================================================
+ *
+ *  Reference color palette (Zinc scale from learn.vedam.org):
+ *    --bg-base:       #18181b  (zinc-900 — main bg)
+ *    --bg-card:       #27272a  (zinc-800 — panels)
+ *    --bg-tabs:       #000000  (black — tab bars)
+ *    --bg-control:    #262626  (neutral-800 — buttons)
+ *    --bg-control-hv: #404040  (neutral-700 — button hover)
+ *    --border:        #3f3f46  (zinc-700)
+ *    --border-subtle: #27272a  (zinc-800)
+ *    --text-primary:  #f4f4f5  (zinc-100)
+ *    --text-body:     #d1d5db  (gray-300 — prose)
+ *    --text-secondary:#d4d4d8  (zinc-300)
+ *    --text-muted:    #a1a1aa  (zinc-400)
+ *    --accent-green:  #22c55e  (green-500)
+ *  
+ * ============================================================
+ */
+
+/* ========== CSS VARIABLES ========== */
+.vedam-reskin {
+  --r-bg-base: #18181b;
+  --r-bg-card: #27272a;
+  --r-bg-tabs: #000000;
+  --r-bg-control: #262626;
+  --r-bg-control-hover: #404040;
+  --r-border: #3f3f46;
+  --r-border-subtle: #27272a;
+  --r-text-primary: #f4f4f5;
+  --r-text-body: #d1d5db;
+  --r-text-secondary: #d4d4d8;
+  --r-text-muted: #a1a1aa;
+  --r-accent-green: #22c55e;
+  --r-accent-purple: #a78bfa;
+  --r-radius: 6px;
+  --r-transition: all 0.15s ease;
+}
+
+/* ========== GLOBAL BASE ========== */
+html.vedam-reskin,
+body.vedam-reskin {
+  background-color: var(--r-bg-base) !important;
+  color: var(--r-text-primary) !important;
+}
+
+/* =====================================================
+ *  1. HEADER — COMPLETELY HIDDEN
+ * ===================================================== */
+.vedam-reskin .css-1lx4m1z {
+  display: none !important;
+}
+
+/* Also hide the header's parent spacer if needed */
+.vedam-reskin .css-ax9m00,
+.vedam-reskin .css-e57221 {
+  display: none !important;
+}
+
+/* =====================================================
+ *  2. SIDEBAR — COMPLETELY HIDDEN
+ * ===================================================== */
+.vedam-reskin .css-f7bhzc,
+.vedam-reskin .MuiDrawer-root,
+.vedam-reskin .MuiDrawer-docked,
+.vedam-reskin .MuiDrawer-paper,
+.vedam-reskin .MuiDrawer-paperAnchorLeft {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+}
+
+/* =====================================================
+ *  3. MAIN CONTENT — FULL WIDTH, NO TOP OFFSET
+ * ===================================================== */
+.vedam-reskin .css-1arwkkx {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  width: 100% !important;
+  position: relative !important;
+  top: 0 !important;
+}
+
+.vedam-reskin .css-1hwmdd3 {
+  width: 100% !important;
+}
+
+/* The content wrapper — needs to start at top of page */
+.vedam-reskin .css-15ewwyc {
+  background-color: var(--r-bg-base) !important;
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+
+/* =====================================================
+ *  4. QUESTION NAV BAR — RESTYLE TO MATCH REFERENCE
+ *  Reference: Run & Submit buttons centered at top
+ * ===================================================== */
+.vedam-reskin .css-1n07oit {
+  background-color: var(--r-bg-base) !important;
+  border-bottom: none !important;
+  padding: 8px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Question dropdown */
+.vedam-reskin .css-ci559 {
+  background-color: var(--r-bg-control) !important;
+  color: var(--r-text-primary) !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: var(--r-radius) !important;
+}
+
+/* Nav buttons */
+.vedam-reskin .css-172hjuw .MuiIconButton-root {
+  color: var(--r-text-primary) !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.vedam-reskin .css-172hjuw .MuiIconButton-root:hover {
+  background-color: var(--r-bg-control-hover) !important;
+}
+
+/* =====================================================
+ *  5. RUN BUTTON — MATCH REFERENCE
+ * ===================================================== */
+.vedam-reskin .css-1pcurce,
+.vedam-reskin .css-172hjuw .MuiIconButton-sizeMedium {
+  background-color: var(--r-bg-control) !important;
+  color: var(--r-text-primary) !important;
+  border-radius: 4px !important;
+}
+
+/* =====================================================
+ *  6. SUBMIT BUTTON — GREEN TEXT ON DARK
+ * ===================================================== */
+.vedam-reskin .MuiButton-outlinedPrimary,
+.vedam-reskin [data-reskin="submit-btn"] {
+  background-color: var(--r-bg-control) !important;
+  color: var(--r-accent-green) !important;
+  border: 1px solid var(--r-accent-green) !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+  padding: 6px 12px !important;
+  transition: var(--r-transition) !important;
+}
+
+.vedam-reskin .MuiButton-outlinedPrimary:hover {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* =====================================================
+ *  7. DESCRIPTION PANEL
+ * ===================================================== */
+.vedam-reskin .css-ig9lpx {
+  background-color: var(--r-bg-card) !important;
+  border-radius: var(--r-radius) !important;
+  border: 1px solid transparent !important;
+  overflow: hidden !important;
+}
+
+/* Tab bar — black like reference */
+.vedam-reskin .css-ig9lpx .MuiTabs-root,
+.vedam-reskin .css-z4j9cc {
+  background-color: var(--r-bg-tabs) !important;
+  padding: 4px 8px !important;
+  gap: 8px !important;
+}
+
+/* Tab buttons */
+.vedam-reskin .MuiTab-root {
+  color: var(--r-text-muted) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+  min-height: 32px !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  letter-spacing: -0.02em !important;
+  transition: var(--r-transition) !important;
+}
+
+.vedam-reskin .MuiTab-root:hover {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiTab-root.Mui-selected {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+/* Hide MUI tab indicator line */
+.vedam-reskin .MuiTabs-indicator {
+  display: none !important;
+}
+
+/* Description content area */
+.vedam-reskin .css-ubznp {
+  background-color: var(--r-bg-card) !important;
+  padding: 24px !important;
+}
+
+/* Description panel inner tab panel */
+.vedam-reskin .css-ubznp [role="tabpanel"] {
+  padding: 0 !important;
+}
+
+/* =====================================================
+ *  8. DESCRIPTION TYPOGRAPHY
+ * ===================================================== */
+/* Problem title — large, bold, white, tight tracking */
+.vedam-reskin .css-ig9lpx .MuiTypography-root,
+.vedam-reskin .css-ig9lpx h1,
+.vedam-reskin .css-ig9lpx h2,
+.vedam-reskin .css-ig9lpx h3 {
+  color: var(--r-text-primary) !important;
+  letter-spacing: -0.05em !important;
+}
+
+/* Main problem title */
+.vedam-reskin .css-ig9lpx .MuiTypography-root:first-of-type,
+.vedam-reskin .css-ig9lpx h1:first-of-type {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  color: white !important;
+  letter-spacing: -1.5px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Body/prose text */
+.vedam-reskin .css-ig9lpx p,
+.vedam-reskin .css-ig9lpx span,
+.vedam-reskin .css-ig9lpx li,
+.vedam-reskin .css-ig9lpx div {
+  color: var(--r-text-body) !important;
+  font-size: 16px !important;
+  line-height: 28px !important;
+}
+
+/* Keep tab text smaller */
+.vedam-reskin .MuiTab-root span,
+.vedam-reskin .MuiTab-root div {
+  font-size: 14px !important;
+  line-height: normal !important;
+}
+
+/* Bold text in description */
+.vedam-reskin .css-ig9lpx strong,
+.vedam-reskin .css-ig9lpx b {
+  color: var(--r-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+/* Links in description */
+.vedam-reskin .css-ig9lpx a {
+  color: var(--r-accent-purple) !important;
+}
+
+/* =====================================================
+ *  9. SAMPLE TEST CASE TABLE
+ * ===================================================== */
+/* Section header */
+.vedam-reskin .css-ig9lpx h2,
+.vedam-reskin .css-ig9lpx h3 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.05em !important;
+  color: var(--r-text-primary) !important;
+}
+
+/* Table container */
+.vedam-reskin .css-ig9lpx table,
+.vedam-reskin .css-ig9lpx [class*="divide-y"] {
+  border-color: var(--r-border) !important;
+}
+
+.vedam-reskin table {
+  border-collapse: collapse !important;
+  background-color: var(--r-bg-card) !important;
+}
+
+.vedam-reskin th {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--r-border) !important;
+}
+
+.vedam-reskin td {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+  font-size: 14px !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--r-border) !important;
+}
+
+/* Input/Output code blocks in description */
+.vedam-reskin .css-1a9z8t4 {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: var(--r-radius) !important;
+}
+
+/* Code/pre blocks */
+.vedam-reskin pre {
+  background-color: #2d2d2d !important;
+  color: var(--r-text-primary) !important;
+  border-radius: var(--r-radius) !important;
+  border: 1px solid var(--r-border) !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+}
+
+.vedam-reskin code {
+  background-color: #2d2d2d !important;
+  color: var(--r-text-primary) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 0.9em !important;
+}
+
+/* =====================================================
+ *  10. CODE EDITOR PANEL
+ * ===================================================== */
+.vedam-reskin .css-14tvm1h {
+  background-color: var(--r-bg-card) !important;
+  border-radius: var(--r-radius) !important;
+  border: 1px solid transparent !important;
+  overflow: hidden !important;
+}
+
+/* Editor toolbar */
+.vedam-reskin .css-10fxlwj,
+.vedam-reskin .css-tp561w {
+  background-color: var(--r-bg-card) !important;
+  border-bottom: 1px solid var(--r-border) !important;
+}
+
+/* Language select */
+.vedam-reskin .css-14tvm1h select,
+.vedam-reskin .MuiSelect-root {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: var(--r-radius) !important;
+}
+
+/* =====================================================
+ *  11. TEST CASE PANEL
+ * ===================================================== */
+.vedam-reskin .css-7fsbrp {
+  background-color: var(--r-bg-card) !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: var(--r-radius) !important;
+  overflow: hidden !important;
+}
+
+/* Test case tab bar */
+.vedam-reskin .css-6pnetm {
+  background-color: var(--r-bg-tabs) !important;
+}
+
+/* Test case tab buttons */
+.vedam-reskin .css-7fsbrp .MuiTab-root {
+  color: var(--r-text-muted) !important;
+}
+
+.vedam-reskin .css-7fsbrp .MuiTab-root.Mui-selected {
+  color: var(--r-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+/* Test case content */
+.vedam-reskin .css-1roivz5 {
+  background-color: var(--r-bg-card) !important;
+}
+
+/* Test case input fields */
+.vedam-reskin .css-7fsbrp textarea,
+.vedam-reskin .css-7fsbrp input,
+.vedam-reskin .css-7fsbrp .MuiInputBase-root {
+  background-color: var(--r-bg-base) !important;
+  color: var(--r-text-primary) !important;
+  border-color: var(--r-border) !important;
+  font-size: 14px !important;
+}
+
+/* =====================================================
+ *  12. GLOBAL MUI OVERRIDES
+ * ===================================================== */
+.vedam-reskin .MuiPaper-root {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiBox-root {
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiButtonBase-root {
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiIconButton-root {
+  color: var(--r-text-muted) !important;
+}
+
+.vedam-reskin .MuiIconButton-root:hover {
+  background-color: var(--r-bg-control-hover) !important;
+}
+
+.vedam-reskin .MuiTypography-root {
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiDivider-root {
+  border-color: var(--r-border) !important;
+}
+
+/* MUI inputs */
+.vedam-reskin .MuiInputBase-root,
+.vedam-reskin .MuiOutlinedInput-root {
+  background-color: var(--r-bg-base) !important;
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiOutlinedInput-notchedOutline {
+  border-color: var(--r-border) !important;
+}
+
+/* MUI menus */
+.vedam-reskin .MuiMenu-paper,
+.vedam-reskin .MuiPopover-paper {
+  background-color: var(--r-bg-card) !important;
+}
+
+.vedam-reskin .MuiMenuItem-root {
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiMenuItem-root:hover {
+  background-color: var(--r-bg-control-hover) !important;
+}
+
+/* MUI Tooltip */
+.vedam-reskin .MuiTooltip-tooltip {
+  background-color: var(--r-bg-base) !important;
+  color: var(--r-text-primary) !important;
+}
+
+/* MUI Dialog */
+.vedam-reskin .MuiDialog-paper {
+  background-color: var(--r-bg-card) !important;
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin .MuiBackdrop-root {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* =====================================================
+ *  13. GENERAL TEXT
+ * ===================================================== */
+.vedam-reskin h1, .vedam-reskin h2, .vedam-reskin h3,
+.vedam-reskin h4, .vedam-reskin h5, .vedam-reskin h6 {
+  color: var(--r-text-primary) !important;
+}
+
+.vedam-reskin p, .vedam-reskin label, .vedam-reskin li {
+  color: inherit !important;
+}
+
+.vedam-reskin a:hover {
+  color: var(--r-accent-purple) !important;
+}
+
+/* =====================================================
+ *  14. SCROLLBARS
+ * ===================================================== */
+.vedam-reskin ::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.vedam-reskin ::-webkit-scrollbar-track {
+  background: var(--r-bg-base) !important;
+}
+
+.vedam-reskin ::-webkit-scrollbar-thumb {
+  background: var(--r-border) !important;
+  border-radius: 4px !important;
+}
+
+.vedam-reskin ::-webkit-scrollbar-thumb:hover {
+  background: var(--r-text-muted) !important;
+}
+
+/* =====================================================
+ *  15. MONACO EDITOR — ONE DARK PRO CHROME
+ *
+ *  Editor chrome and layout colors live here. Font and syntax highlighting are
+ *  configured through Monaco in page-monaco-theme.js so its measured glyphs,
+ *  cursor, and sticky-scroll lines use the same font.
+ * ===================================================== */
+
+/* ── CSS Variables ── */
+.vedam-reskin .monaco-editor {
+  --vscode-editor-background: #27272a !important;
+  --vscode-editor-foreground: #abb2bf !important;
+  --vscode-editorLineNumber-foreground: #495162 !important;
+  --vscode-editorLineNumber-activeForeground: #c6c6c6 !important;
+  --vscode-editor-lineHighlightBackground: #2c313c !important;
+  --vscode-editor-lineHighlightBorder: transparent !important;
+  --vscode-editorGutter-background: #27272a !important;
+  --vscode-editorCursor-foreground: #528bff !important;
+  --vscode-editor-selectionBackground: #3e4451 !important;
+  --vscode-editor-inactiveSelectionBackground: #3a3f4b !important;
+  --vscode-editorIndentGuide-background: #3b4048 !important;
+  --vscode-editorIndentGuide-activeBackground: #c8c8c859 !important;
+  --vscode-editorBracketMatch-background: #515a6b !important;
+  --vscode-editorBracketMatch-border: #9ca3af !important;
+  --vscode-editorWhitespace-foreground: #3b4048 !important;
+  --vscode-editorOverviewRuler-border: #27272a !important;
+  --vscode-scrollbar-shadow: #000000 !important;
+  --vscode-scrollbarSlider-background: rgba(78, 86, 102, 0.5) !important;
+  --vscode-scrollbarSlider-hoverBackground: rgba(90, 99, 117, 0.5) !important;
+  --vscode-scrollbarSlider-activeBackground: rgba(90, 99, 117, 0.7) !important;
+  --vscode-editorWidget-background: #181a1f !important;
+  --vscode-editorSuggestWidget-background: #181a1f !important;
+  --vscode-editorSuggestWidget-border: #181a1f !important;
+  --vscode-editorSuggestWidget-foreground: #abb2bf !important;
+  --vscode-editorSuggestWidget-selectedBackground: #2c313c !important;
+  --vscode-editorHoverWidget-background: #181a1f !important;
+  --vscode-editorHoverWidget-border: #181a1f !important;
+  --vscode-input-background: #1b1d23 !important;
+  --vscode-focusBorder: #528bff !important;
+}
+
+/* ── Editor background ── */
+.vedam-reskin .monaco-editor,
+.vedam-reskin .monaco-editor .overflow-guard,
+.vedam-reskin .monaco-editor-background,
+.vedam-reskin .monaco-editor .margin {
+  background-color: #27272a !important;
+}
+
+/*
+ * Syntax highlighting is applied through page-monaco-theme.js via the Monaco
+ * API. Broad .mtk* !important rules here would override Monaco's generated
+ * theme stylesheet and prevent fine-grained keyword/type colors.
+ */
+
+/* ── Line numbers ── */
+.vedam-reskin .monaco-editor .line-numbers {
+  color: #495162 !important;
+}
+.vedam-reskin .monaco-editor .active-line-number {
+  color: #c6c6c6 !important;
+}
+
+/* ── Current line ── */
+.vedam-reskin .monaco-editor .current-line {
+  background-color: rgba(44, 49, 60, 0.5) !important;
+  border: none !important;
+}
+
+/* ── Cursor ── */
+.vedam-reskin .monaco-editor .cursor {
+  background-color: #528bff !important;
+  border-color: #528bff !important;
+}
+
+/* Monaco applies its font metrics to code, line numbers, and sticky scroll.
+   Overriding rendered spans here makes those layers disagree after A+/A−. */
+
+/* Keep punctuation stable; Monaco's bracket-pair layer otherwise recolors it. */
+.vedam-reskin .monaco-editor .bracket-highlighting-0,
+.vedam-reskin .monaco-editor .bracket-highlighting-1,
+.vedam-reskin .monaco-editor .bracket-highlighting-2,
+.vedam-reskin .monaco-editor .bracket-highlighting-3,
+.vedam-reskin .monaco-editor .bracket-highlighting-4,
+.vedam-reskin .monaco-editor .bracket-highlighting-5,
+.vedam-reskin .monaco-editor .bracket-highlighting-unexpected {
+  color: #ffffff !important;
+}
+
+.vedam-reskin .monaco-editor .bracket-match,
+.vedam-reskin .monaco-editor .ced-1-TextEditorDecorationType,
+.vedam-reskin .monaco-editor .cdr.bracket-match {
+  background-color: #515a6b !important;
+  border-color: #9ca3af !important;
+  outline-color: #9ca3af !important;
+  box-shadow: none !important;
+}
+
+/* ── Don't break Monaco borders ── */
+.vedam-reskin .monaco-editor *,
+.vedam-reskin .monaco-editor .view-line * {
+  border-color: unset !important;
+}
+
+/* =====================================================
+ *  16. GLOBAL BORDER FIX (exclude Monaco)
+ * ===================================================== */
+.vedam-reskin *:not(.monaco-editor *) {
+  border-color: var(--r-border) !important;
+}
+
+/* =====================================================
+ *  17. SMOOTH ENTRY
+ * ===================================================== */
+html.vedam-reskin body {
+  animation: reskinFadeIn 0.2s ease-out;
+}
+
+@keyframes reskinFadeIn {
+  from { opacity: 0.9; }
+  to { opacity: 1; }
+}
+
+/* =====================================================
+ *  18. LEARN-STYLE UI POLISH
+ * ===================================================== */
+.vedam-reskin {
+  --r-bg-base: #18181b;
+  --r-bg-card: #27272a;
+  --r-bg-tabs: #3f3f46;
+  --r-bg-tab-active: #18181b;
+  --r-bg-input: #27272a;
+  --r-border: #3f3f46;
+  --r-text-body: #d4d4d8;
+  --r-text-muted: #a1a1aa;
+  --r-accent-green: #22c55e;
+  --r-radius: 6px;
+}
+
+.vedam-reskin .css-15ewwyc {
+  padding: 8px 18px 18px !important;
+}
+
+.vedam-reskin .css-knn3zu {
+  gap: 14px !important;
+  padding: 0 !important;
+  height: calc(100vh - 76px) !important;
+}
+
+.vedam-reskin .css-1n07oit {
+  min-height: 52px !important;
+  padding: 8px 16px !important;
+  gap: 10px !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child {
+  display: flex !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-79elbk {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-0 {
+  width: 30px !important;
+  height: 30px !important;
+  margin-right: 8px !important;
+  color: var(--r-text-muted) !important;
+  opacity: 0.75 !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-ci559 {
+  min-width: 150px !important;
+  height: 38px !important;
+  padding: 0 14px !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: 6px !important;
+  background-color: var(--r-bg-control) !important;
+  color: var(--r-text-primary) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .MuiIconButton-root {
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: 999px !important;
+  background-color: var(--r-bg-control) !important;
+  color: var(--r-text-primary) !important;
+  opacity: 1 !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .MuiIconButton-root.Mui-disabled {
+  color: var(--r-text-muted) !important;
+  opacity: 0.38 !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .MuiIconButton-root:hover {
+  background-color: var(--r-bg-control-hover) !important;
+}
+
+.vedam-reskin .css-1n07oit > .css-172hjuw {
+  gap: 8px !important;
+}
+
+.vedam-reskin .css-1pcurce {
+  width: auto !important;
+  min-width: 68px !important;
+  height: 34px !important;
+  padding: 0 12px !important;
+  border-radius: 4px !important;
+  background-color: var(--r-bg-control) !important;
+}
+
+.vedam-reskin .css-1pcurce::after {
+  content: "Run";
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.vedam-reskin .MuiButton-outlinedPrimary,
+.vedam-reskin [data-reskin="submit-btn"] {
+  min-width: 86px !important;
+  height: 34px !important;
+  padding: 0 14px !important;
+  border: 0 !important;
+  background-color: var(--r-bg-control) !important;
+  color: var(--r-accent-green) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.vedam-reskin .css-ig9lpx,
+.vedam-reskin .css-14tvm1h,
+.vedam-reskin .css-7fsbrp {
+  border: 1px solid var(--r-border) !important;
+  border-radius: 6px !important;
+  background-color: var(--r-bg-card) !important;
+  box-shadow: none !important;
+}
+
+.vedam-reskin .css-z4j9cc,
+.vedam-reskin .css-ig9lpx .MuiTabs-root,
+.vedam-reskin .css-6pnetm {
+  min-height: 44px !important;
+  height: 44px !important;
+  padding: 6px 10px !important;
+  align-items: center !important;
+  background-color: var(--r-bg-tabs) !important;
+  border-bottom: 1px solid var(--r-border) !important;
+}
+
+.vedam-reskin .MuiTab-root {
+  min-height: 30px !important;
+  height: 30px !important;
+  min-width: 0 !important;
+  padding: 0 12px !important;
+  border-radius: 4px !important;
+  color: var(--r-text-body) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.vedam-reskin .css-ubznp .MuiTypography-root {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+}
+
+.vedam-reskin .css-ubznp [data-reskin="problem-title"] {
+  font-size: 28px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.vedam-reskin .css-ubznp [data-reskin="problem-label"],
+.vedam-reskin .css-ig9lpx .css-ubznp [data-reskin="problem-label"],
+.vedam-reskin .css-ubznp .css-1e0qvh3,
+.vedam-reskin .css-ubznp .css-i1m7lq {
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+.vedam-reskin .css-ubznp .css-1a9z8t4 .MuiTypography-root,
+.vedam-reskin .css-ig9lpx .css-ubznp .css-1a9z8t4 [data-reskin="problem-label"],
+.vedam-reskin .css-ubznp .css-1875k9b {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+}
+
+.vedam-reskin .MuiTab-root.Mui-selected {
+  background-color: var(--r-bg-tab-active) !important;
+  color: var(--r-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.vedam-reskin .css-ubznp {
+  padding: 28px 24px !important;
+}
+
+.vedam-reskin .css-ig9lpx .MuiTypography-root:first-of-type,
+.vedam-reskin .css-ig9lpx h1:first-of-type {
+  margin-bottom: 22px !important;
+  font-size: 28px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.vedam-reskin .css-ig9lpx p,
+.vedam-reskin .css-ig9lpx span,
+.vedam-reskin .css-ig9lpx li,
+.vedam-reskin .css-ig9lpx div {
+  color: var(--r-text-body) !important;
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+}
+
+.vedam-reskin .css-ig9lpx h2,
+.vedam-reskin .css-ig9lpx h3 {
+  font-size: 17px !important;
+  letter-spacing: 0 !important;
+}
+
+.vedam-reskin .css-10fxlwj,
+.vedam-reskin .css-tp561w {
+  border-bottom: 1px solid var(--r-border) !important;
+  border-radius: 0 !important;
+}
+
+.vedam-reskin .css-14tvm1h select,
+.vedam-reskin .MuiSelect-root {
+  min-width: 196px !important;
+  height: 32px !important;
+  padding: 0 34px 0 14px !important;
+  border-radius: 5px !important;
+  background-color: var(--r-bg-input) !important;
+  color: var(--r-text-body) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.vedam-reskin .css-6pnetm {
+  padding-left: 10px !important;
+}
+
+.vedam-reskin .css-1roivz5 {
+  padding: 22px 16px !important;
+  background-color: var(--r-bg-card) !important;
+}
+
+.vedam-reskin .css-7fsbrp textarea,
+.vedam-reskin .css-7fsbrp input,
+.vedam-reskin .css-7fsbrp .MuiInputBase-root {
+  background-color: var(--r-bg-input) !important;
+  border: 1px solid var(--r-border) !important;
+  border-radius: 5px !important;
+}
+
+.vedam-reskin .css-7fsbrp label,
+.vedam-reskin .css-7fsbrp .MuiTypography-root {
+  color: var(--r-text-body) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.vedam-reskin *:not(.monaco-editor):not(.monaco-editor *) {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.vedam-reskin *:not(.monaco-editor):not(.monaco-editor *)::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.vedam-reskin .css-ubznp,
+.vedam-reskin .css-1roivz5,
+.vedam-reskin .css-knn3zu {
+  scrollbar-width: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .css-ubznp .MuiTypography-root.MuiTypography-body1[data-reskin="problem-title"] {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .css-ubznp .MuiTypography-root.MuiTypography-body1[data-reskin="problem-label"] {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .css-ubznp .css-1a9z8t4 .MuiTypography-root.MuiTypography-body1[data-reskin="problem-label"] {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.8 !important;
+}
+
+/* Separate the right column into the same distinct blocks learn.vedam uses. */
+html.vedam-reskin body.vedam-reskin .css-14tvm1h {
+  gap: 22px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h > .MuiBox-root {
+  border: 1px solid var(--r-border) !important;
+  border-radius: 8px !important;
+  background-color: var(--r-bg-card) !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h > .MuiBox-root:first-child {
+  flex: 1.15 1 0 !important;
+  min-height: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h > .MuiBox-root:last-child {
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-tp561w {
+  min-height: 52px !important;
+  padding: 8px 16px !important;
+  background-color: var(--r-bg-card) !important;
+  border-bottom: 1px solid var(--r-border) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-10fxlwj {
+  padding: 0 !important;
+  background-color: var(--r-bg-card) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-1g68m89,
+html.vedam-reskin body.vedam-reskin .css-14tvm1h section {
+  background-color: #27272a !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-6pnetm {
+  min-height: 44px !important;
+  height: 44px !important;
+  background-color: #3f3f46 !important;
+  border-bottom: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-1roivz5 {
+  padding: 24px 16px !important;
+  background-color: var(--r-bg-card) !important;
+}
+
+/* Keep editor scroll behavior but remove the visible Monaco scrollbar chrome. */
+.vedam-reskin .monaco-editor .scrollbar,
+.vedam-reskin .monaco-editor .decorationsOverviewRuler,
+.vedam-reskin .monaco-editor .scroll-decoration {
+  opacity: 0 !important;
+}
+
+/* =====================================================
+ *  19. LEARN-LIKE PANEL GEOMETRY FIXES
+ *
+ *  Keep student controls/icons/text intact. These rules only normalize
+ *  color, spacing, dimensions, borders, and typography around the panels.
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .css-knn3zu {
+  align-items: stretch !important;
+  gap: 12px !important;
+  overflow: hidden !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx,
+html.vedam-reskin body.vedam-reskin .css-14tvm1h {
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx {
+  flex: 1 1 0 !important;
+  width: auto !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx,
+html.vedam-reskin body.vedam-reskin .css-14tvm1h > .MuiBox-root {
+  border-color: #3f3f46 !important;
+  border-radius: 8px !important;
+  background-color: #27272a !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-z4j9cc,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .MuiTabs-root,
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-6pnetm {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  padding: 6px 10px !important;
+  background-color: #3f3f46 !important;
+  border-bottom: 1px solid #3f3f46 !important;
+  border-radius: 8px 8px 0 0 !important;
+  box-sizing: border-box !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-z4j9cc,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .MuiTabs-root {
+  flex: 0 0 auto !important;
+  align-self: stretch !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-6pnetm {
+  flex: 0 0 44px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-z4j9cc .MuiTabs-flexContainer,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .MuiTabs-flexContainer,
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-6pnetm .MuiTabs-flexContainer {
+  height: 100% !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiTab-root {
+  min-height: 32px !important;
+  height: 32px !important;
+  padding: 0 14px !important;
+  border-radius: 4px !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiTab-root.Mui-selected {
+  background-color: #18181b !important;
+  color: #f4f4f5 !important;
+  font-weight: 700 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h > .MuiBox-root:first-child {
+  flex: 1.15 1 0 !important;
+  min-height: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h > .MuiBox-root:last-child {
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-tp561w {
+  flex: 0 0 49px !important;
+  min-height: 49px !important;
+  height: 49px !important;
+  padding: 0 14px !important;
+  background-color: #27272a !important;
+  border-bottom: 1px solid #3f3f46 !important;
+  border-radius: 8px 8px 0 0 !important;
+  box-sizing: border-box !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-10fxlwj {
+  padding: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin="editor-area"],
+html.vedam-reskin body.vedam-reskin .monaco-editor {
+  width: 100% !important;
+  background-color: #27272a !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-14tvm1h .css-1roivz5 {
+  padding: 24px 16px !important;
+  background-color: #27272a !important;
+  box-sizing: border-box !important;
+}
+
+/* =====================================================
+ *  20. TAB REMOUNT, SUBMISSIONS, QUESTIONS, RESIZE FIXES
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .css-ig9lpx > .MuiBox-root:first-child,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx > .css-78i5p3 {
+  padding: 0 !important;
+  background-color: #3f3f46 !important;
+  border-radius: 8px 8px 0 0 !important;
+  overflow: hidden !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx .css-z4j9cc {
+  width: 100% !important;
+  height: 44px !important;
+  padding: 6px 10px !important;
+  border-radius: 8px 8px 0 0 !important;
+  background-color: #3f3f46 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp {
+  color: #d4d4d8 !important;
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp .MuiTypography-root {
+  color: #d4d4d8 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp [data-reskin="problem-title"] {
+  color: #f4f4f5 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 22px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp [data-reskin="problem-label"] {
+  color: #f4f4f5 !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp .css-1a9z8t4 [data-reskin="problem-label"] {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.8 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp .css-zn28et,
+html.vedam-reskin body.vedam-reskin .css-ubznp [class*="css-zn28et"] {
+  background-color: #27272a !important;
+  color: #d4d4d8 !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp .css-zn28et > .MuiBox-root,
+html.vedam-reskin body.vedam-reskin .css-ubznp .css-726gkt,
+html.vedam-reskin body.vedam-reskin .css-ubznp [class*="css-zn28et"] > .MuiBox-root {
+  background-color: #27272a !important;
+  color: #d4d4d8 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root {
+  background-color: transparent !important;
+  color: #d4d4d8 !important;
+  text-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root[style*="background"],
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root[class*="css-"][style],
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root.css-726gkt,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .css-zn28et,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp [class*="css-zn28et"] {
+  background-color: #27272a !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root:has(> .MuiTypography-root),
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root:has(.MuiDivider-root),
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root:has(pre),
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiBox-root:has(code) {
+  background-color: #27272a !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp .MuiDivider-root {
+  border-color: #3f3f46 !important;
+  background-color: #3f3f46 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp pre,
+html.vedam-reskin body.vedam-reskin .css-ig9lpx[data-reskin-active-tab="submissions"] .css-ubznp code {
+  background-color: #27272a !important;
+  color: #d4d4d8 !important;
+  border-color: #3f3f46 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp .css-zn28et *,
+html.vedam-reskin body.vedam-reskin .css-ubznp [class*="css-zn28et"] * {
+  color: #d4d4d8 !important;
+  text-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-ubznp .css-zn28et .MuiTypography-root:first-of-type,
+html.vedam-reskin body.vedam-reskin .css-ubznp [class*="css-zn28et"] .MuiTypography-root:first-of-type {
+  color: #f4f4f5 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-e5d0gq {
+  background-color: #27272a !important;
+  color: #f4f4f5 !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-e5d0gq *,
+html.vedam-reskin body.vedam-reskin .css-e5d0gq .MuiTypography-root {
+  color: #f4f4f5 !important;
+  text-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-e5d0gq .css-1ok9gt8,
+html.vedam-reskin body.vedam-reskin .css-e5d0gq .css-3kxlso,
+html.vedam-reskin body.vedam-reskin .css-e5d0gq .css-1gza4bc {
+  background-color: #27272a !important;
+  color: #f4f4f5 !important;
+  border-color: #3f3f46 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-e5d0gq .css-1gza4bc {
+  box-shadow: inset 0 0 0 2px rgba(34, 197, 94, 0.28) !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-resizer] {
+  flex: 0 0 8px !important;
+  align-self: stretch !important;
+  position: relative !important;
+  z-index: 3 !important;
+  background: transparent !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-resizer="main"] {
+  width: 8px !important;
+  margin: 0 -3px !important;
+  cursor: col-resize !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-resizer="right"] {
+  height: 8px !important;
+  min-height: 8px !important;
+  margin: -15px 0 !important;
+  cursor: row-resize !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-resizer]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 0.12s ease;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-resizer]:hover::after,
+html.vedam-reskin body.vedam-reskin.vedam-reskin-resizing [data-reskin-resizer]::after {
+  background-color: rgba(161, 161, 170, 0.24);
+}
+
+html.vedam-reskin body.vedam-reskin.vedam-reskin-resizing {
+  user-select: none !important;
+  cursor: resizing !important;
+}
+
+/* =====================================================
+ *  21. ATOMIC RESKIN BOOT
+ *
+ *  Prevent the extension's older/base reskin from painting first and then
+ *  changing again when JS-added handles/tags arrive.
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin {
+  animation: none !important;
+}
+
+html.vedam-reskin.vedam-reskin-booting:not(.vedam-reskin-ready) body.vedam-reskin .css-15ewwyc {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+html.vedam-reskin.vedam-reskin-ready body.vedam-reskin .css-15ewwyc {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* =====================================================
+ *  22. LEARN-LIKE TOP CONTROLS
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .css-15ewwyc {
+  padding-top: 0 !important;
+  gap: 8px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit {
+  min-height: 40px !important;
+  height: 40px !important;
+  padding: 8px 16px 0 !important;
+  gap: 8px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #18181b !important;
+  border-bottom: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw,
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .MuiBox-root {
+  height: 32px !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child {
+  gap: 8px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-0 {
+  width: 32px !important;
+  height: 32px !important;
+  margin-right: 8px !important;
+  color: #a1a1aa !important;
+  opacity: 0.72 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-ci559 {
+  min-width: 150px !important;
+  height: 32px !important;
+  padding: 0 14px !important;
+  gap: 6px !important;
+  border-radius: 6px !important;
+  border: 1px solid #3f3f46 !important;
+  background-color: #262626 !important;
+  color: #f4f4f5 !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .MuiIconButton-root {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  border: 1px solid #3f3f46 !important;
+  background-color: #262626 !important;
+  color: #f4f4f5 !important;
+  opacity: 1 !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .MuiIconButton-root:hover {
+  background-color: #404040 !important;
+  border-color: #52525b !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .MuiIconButton-root.Mui-disabled {
+  color: #71717a !important;
+  opacity: 0.55 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .MuiIconButton-root svg {
+  width: 18px !important;
+  height: 18px !important;
+  color: currentColor !important;
+  fill: currentColor !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce,
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"] {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 6px 12px !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  background-color: #262626 !important;
+  box-shadow: none !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  text-transform: none !important;
+  transition: background-color 0.15s ease !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce {
+  min-width: 74px !important;
+  width: 74px !important;
+  color: #f4f4f5 !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce::after {
+  margin-left: 8px !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"] {
+  min-width: 95px !important;
+  color: #22c55e !important;
+  justify-content: center !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce:hover,
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"]:hover {
+  background-color: #404040 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child,
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-79elbk,
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-179a4s9 {
+  height: 32px !important;
+  align-items: center !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-ci559 {
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .MuiIconButton-root {
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+}
+
+/* =====================================================
+ *  23. FINAL TOP CONTROL ICON POLISH
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .css-1n07oit {
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 8px 16px 0 !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-0 {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  margin: 0 8px 0 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #71717a !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-0 svg {
+  width: 24px !important;
+  height: 24px !important;
+  display: block !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-0 svg,
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .css-0 path {
+  color: #71717a !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-ci559,
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce,
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"],
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:first-child .MuiIconButton-root {
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce {
+  width: 74px !important;
+  min-width: 74px !important;
+  padding: 6px 12px !important;
+  gap: 8px !important;
+  color: #f4f4f5 !important;
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce svg {
+  width: 18px !important;
+  height: 18px !important;
+  color: #f4f4f5 !important;
+  fill: #f4f4f5 !important;
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce path {
+  color: #f4f4f5 !important;
+  fill: #f4f4f5 !important;
+  stroke: #f4f4f5 !important;
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit .css-1pcurce::after {
+  content: "Run" !important;
+  color: #f4f4f5 !important;
+  margin-left: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"] {
+  min-width: 112px !important;
+  width: auto !important;
+  max-width: 154px !important;
+  padding: 6px 12px !important;
+  gap: 8px !important;
+  color: #22c55e !important;
+  background-color: #262626 !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  white-space: nowrap !important;
+  flex: 0 0 auto !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"] *,
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"] .MuiBox-root {
+  color: #22c55e !important;
+  font: inherit !important;
+  line-height: 20px !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="submit-btn"]::before {
+  content: "" !important;
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  flex: 0 0 20px !important;
+  background-color: #22c55e !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7.5 18a5.5 5.5 0 0 1-.67-10.96A6.5 6.5 0 0 1 18.7 9.2 4.5 4.5 0 0 1 18.5 18h-11Z'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7.5 18a5.5 5.5 0 0 1-.67-10.96A6.5 6.5 0 0 1 18.7 9.2 4.5 4.5 0 0 1 18.5 18h-11Z'/%3E%3C/svg%3E") center / contain no-repeat !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="complete-btn"] {
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+  min-width: 112px !important;
+  padding: 6px 16px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: linear-gradient(90deg, #7c3aed 0%, #a21caf 100%) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 20px !important;
+  text-transform: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit [data-reskin="complete-btn"] * {
+  color: #ffffff !important;
+  font: inherit !important;
+  line-height: 20px !important;
+}
+
+/* =====================================================
+ *  24. RUN / SUBMIT RESULT POPUPS
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root {
+  z-index: 2147483000 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast],
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-root,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiPaper-root,
+html.vedam-reskin body.vedam-reskin [role="alert"].MuiAlert-root {
+  min-width: 420px !important;
+  max-width: 520px !important;
+  min-height: 58px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 16px !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 8px !important;
+  background: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] .MuiAlert-root,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] .MuiPaper-root {
+  min-width: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  border: 0 !important;
+  border-radius: inherit !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] *,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-root *,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiPaper-root * {
+  color: inherit !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] .MuiAlert-message,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-message,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] [class*="message"],
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] [class*="Message"] {
+  padding: 0 !important;
+  color: #f4f4f5 !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-action {
+  margin: 0 0 0 auto !important;
+  padding: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast] button,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-action button {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  color: inherit !important;
+  background: transparent !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"],
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardSuccess,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledSuccess {
+  border-color: rgba(34, 197, 94, 0.45) !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"],
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardError,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledError {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"] .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"] .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"] button,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"] svg,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"] path,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardSuccess .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardSuccess .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardSuccess svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardSuccess path,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledSuccess .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledSuccess .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledSuccess svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledSuccess path {
+  color: #22c55e !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"] .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"] .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"] button,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"] svg,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"] path,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardError .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardError .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardError svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-standardError path,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledError .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledError .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledError svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-filledError path {
+  color: #ef4444 !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+@media (max-width: 700px) {
+  html.vedam-reskin body.vedam-reskin [data-reskin-toast],
+  html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiAlert-root,
+  html.vedam-reskin body.vedam-reskin .MuiSnackbar-root .MuiPaper-root {
+    min-width: 0 !important;
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+}
+
+/* =====================================================
+ *  25. TOAST NESTING FIX
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] {
+  top: 56px !important;
+  right: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #f4f4f5 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] > *,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) {
+  width: 430px !important;
+  min-width: 430px !important;
+  max-width: 430px !important;
+  min-height: 52px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 8px !important;
+  background: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="success"] > *,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="success"]:not(.MuiSnackbar-root) {
+  border-color: rgba(34, 197, 94, 0.48) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="error"] > *,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast="error"]:not(.MuiSnackbar-root) {
+  border-color: rgba(239, 68, 68, 0.52) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] > * > * {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] .MuiAlert-action {
+  flex: 0 0 auto !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] .MuiAlert-message,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] [class*="message"],
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] [class*="Message"],
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) .MuiAlert-message,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) [class*="message"],
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) [class*="Message"] {
+  flex: 1 1 auto !important;
+  color: #f4f4f5 !important;
+  font-family: Inter, Outfit, system-ui, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+  letter-spacing: 0 !important;
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] path,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) svg,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) path {
+  opacity: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="success"] .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="success"] .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="success"] button,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="success"] svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="success"] path {
+  color: #22c55e !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="error"] .MuiAlert-icon,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="error"] .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="error"] button,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="error"] svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast="error"] path {
+  color: #ef4444 !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+@media (max-width: 700px) {
+  html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] > *,
+  html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) {
+    min-width: 0 !important;
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+}
+
+/* =====================================================
+ *  26. TOAST CLOSE BUTTON CENTERING
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] .MuiAlert-action,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) .MuiAlert-action {
+  height: 32px !important;
+  min-height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] .MuiAlert-action button,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] button[aria-label*="Close" i],
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] button[aria-label*="close" i],
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) .MuiAlert-action button,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) button[aria-label*="Close" i],
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) button[aria-label*="close" i] {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  transform: none !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] .MuiAlert-action button svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] button[aria-label*="Close" i] svg,
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] button[aria-label*="close" i] svg,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) .MuiAlert-action button svg,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) button[aria-label*="Close" i] svg,
+html.vedam-reskin body.vedam-reskin [data-reskin-toast]:not(.MuiSnackbar-root) button[aria-label*="close" i] svg {
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  transform: none !important;
+  line-height: 1 !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] > * > button.MuiIconButton-root {
+  position: absolute !important;
+  top: 50% !important;
+  right: 14px !important;
+  bottom: auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: translateY(-50%) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .MuiSnackbar-root[data-reskin-toast] > * > button.MuiIconButton-root svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+/* =====================================================
+ *  27. SUBMIT LOADING WIDTH RESERVE
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:has([data-reskin="submit-btn"]) {
+  justify-content: flex-start !important;
+  min-width: 236px !important;
+  transform: translateX(21px) !important;
+}
+
+html.vedam-reskin body.vedam-reskin .css-1n07oit > .css-172hjuw:has([data-reskin="submit-btn"]):has([data-reskin="complete-btn"]) {
+  min-width: 356px !important;
+}
+
+/* =====================================================
+ *  28. RESULT STATUS COLORS
+ * ===================================================== */
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status="success"] {
+  color: #22c55e !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status="error"] {
+  color: #ef4444 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status="warning"] {
+  color: #f59e0b !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status] {
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status="success"] + .MuiBox-root {
+  border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status="error"] + .MuiBox-root {
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
+html.vedam-reskin body.vedam-reskin [data-reskin-result-status="warning"] + .MuiBox-root {
+  border-color: rgba(245, 158, 11, 0.38) !important;
+}
+
+/* Subject class files view (regular LMS pages, outside the coding lab reskin). */
+.vedam-show-files-button {
+  order: 1;
+  appearance: none;
+  border: 1px solid #8a18ff;
+  border-radius: 12px;
+  background: #fff;
+  color: #8a18ff;
+  padding: 14px 20px;
+  margin-left: auto;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 150ms, color 150ms, box-shadow 150ms;
+}
+
+.vedam-show-files-button:hover,
+.vedam-show-files-button:focus-visible {
+  background: #8a18ff;
+  color: #fff;
+  box-shadow: 0 5px 16px rgba(138, 24, 255, .18);
+}
+
+.css-1sa4n4o > .css-1wa3lbr:has(.vedam-show-files-button) > .css-15q6t04 {
+  order: 2;
+  margin-left: 12px;
+}
+
+body.vedam-files-active .css-1sa4n4o > :not(#vedam-all-files-page) {
+  display: none !important;
+}
+
+.vedam-files-page {
+  color: #242b35;
+  padding: 0 0 60px;
+  max-width: 1560px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+
+.vedam-files-page *,
+.vedam-files-page *::before,
+.vedam-files-page *::after {
+  box-sizing: border-box;
+}
+
+.vedam-files-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 0 0 30px;
+}
+
+.vedam-files-back {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border: 1px solid #dedee8;
+  border-radius: 10px;
+  background: #fff;
+  color: #232b36;
+  cursor: pointer;
+}
+
+.vedam-files-back:hover,
+.vedam-files-back:focus-visible {
+  border-color: #8a18ff;
+  color: #8a18ff;
+}
+
+.vedam-files-eyebrow {
+  margin: 0 0 2px;
+  color: #718092;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vedam-files-heading h1 {
+  margin: 0;
+  color: #202934;
+  font-size: clamp(25px, 2.2vw, 34px);
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.vedam-files-summary {
+  margin: 7px 0 0;
+  color: #657180;
+  font-size: 14px;
+}
+
+.vedam-files-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(100%, 1020px);
+  margin-bottom: 22px;
+}
+
+.vedam-files-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(480px, 100%);
+  min-height: 48px;
+  padding: 0 15px;
+  border: 1px solid #e4e1ed;
+  border-radius: 12px;
+  background: #fff;
+  color: #8b95a2;
+}
+
+.vedam-files-search:focus-within {
+  border-color: #8a18ff;
+  box-shadow: 0 0 0 3px rgba(138, 24, 255, .08);
+}
+
+.vedam-files-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #27313d;
+  font: inherit;
+  font-size: 14px;
+}
+
+.vedam-files-search input::placeholder {
+  color: #98a2af;
+}
+
+.vedam-tree-expand-all {
+  appearance: none;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid #e4d9f1;
+  border-radius: 9px;
+  background: #fff;
+  color: #8a18ff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.vedam-tree-expand-all:hover,
+.vedam-tree-expand-all:focus-visible {
+  background: #f7f0ff;
+}
+
+.vedam-files-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 20px;
+  padding: 14px 18px;
+  border: 1px solid #ffd1bc;
+  border-radius: 12px;
+  background: #fff6ef;
+  color: #9b4b1f;
+  font-size: 14px;
+}
+
+.vedam-files-error[hidden] {
+  display: none;
+}
+
+.vedam-files-error button {
+  border: 0;
+  background: transparent;
+  color: #8a18ff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.vedam-file-tree {
+  width: min(100%, 1020px);
+  padding: 8px;
+  border: 1px solid #e7e2ef;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(29, 30, 59, .055);
+}
+
+.vedam-tree-month,
+.vedam-tree-class {
+  min-width: 0;
+}
+
+.vedam-tree-month > summary,
+.vedam-tree-class > summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  border-radius: 8px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vedam-tree-month > summary::-webkit-details-marker,
+.vedam-tree-class > summary::-webkit-details-marker {
+  display: none;
+}
+
+.vedam-tree-month > summary:focus-visible,
+.vedam-tree-class > summary:focus-visible {
+  outline: 2px solid #8a18ff;
+  outline-offset: 2px;
+}
+
+.vedam-tree-month-row {
+  min-height: 43px;
+  padding: 6px 12px;
+  background: #f8f5fd;
+  color: #343047;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.vedam-tree-month-row:hover,
+.vedam-tree-class-row:hover {
+  background: #f6f0ff;
+}
+
+.vedam-tree-month + .vedam-tree-month {
+  margin-top: 5px;
+}
+
+.vedam-tree-month-row > svg:first-child,
+.vedam-tree-class-row > svg:first-child {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  color: #9aa1ad;
+  transition: transform 150ms ease;
+}
+
+.vedam-tree-month[open] > .vedam-tree-month-row > svg:first-child,
+.vedam-tree-class[open] > .vedam-tree-class-row > svg:first-child {
+  transform: rotate(90deg);
+}
+
+.vedam-tree-month-row > svg:nth-child(2),
+.vedam-tree-class-row > svg:nth-child(2) {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: #8a18ff;
+}
+
+.vedam-tree-month-name {
+  min-width: 0;
+}
+
+.vedam-tree-month-meta {
+  margin-left: auto;
+  color: #8792a0;
+  font-size: 12px;
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+.vedam-tree-month-children {
+  margin-left: 26px;
+  padding: 4px 0 6px 16px;
+  border-left: 1px solid #e4ddeb;
+}
+
+.vedam-tree-class-row {
+  min-height: 42px;
+  padding: 5px 10px;
+  color: #2e3b4a;
+  font-size: 13px;
+}
+
+.vedam-tree-label {
+  flex: 0 0 auto;
+  min-width: 45px;
+  color: #8a18ff;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.vedam-tree-class-title {
+  min-width: 0;
+  overflow: hidden;
+  color: #245d93;
+  font-weight: 680;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vedam-tree-date {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: #919aa6;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.vedam-tree-count {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  border-radius: 999px;
+  background: #f1e6ff;
+  color: #8a18ff;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.vedam-tree-class-children {
+  margin-left: 28px;
+  padding: 3px 0 8px 16px;
+  border-left: 1px solid #e4ddeb;
+}
+
+.vedam-tree-file {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  min-width: 0;
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: #d66d23;
+  font-size: 13px;
+  font-weight: 620;
+  text-decoration: none;
+}
+
+.vedam-tree-file:hover,
+.vedam-tree-file:focus-visible {
+  background: #fff4e9;
+  outline: none;
+}
+
+.vedam-tree-file > svg:first-child {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+.vedam-tree-file > span {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.vedam-tree-file > svg:last-child {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.vedam-tree-file-unavailable {
+  color: #9aa3af;
+}
+
+.vedam-tree-empty {
+  margin: 0;
+  padding: 8px 10px;
+  color: #9aa3af;
+  font-size: 12px;
+}
+
+.vedam-tree-view-class {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: #8a18ff;
+  font-size: 11px;
+  font-weight: 680;
+  text-decoration: none;
+}
+
+.vedam-tree-view-class:hover {
+  background: #f6f0ff;
+}
+
+.vedam-tree-view-class svg {
+  width: 14px;
+  height: 14px;
+}
+
+.vedam-files-empty-state {
+  padding: 60px 25px;
+  border: 1px dashed #e1dbe9;
+  border-radius: 18px;
+  background: #fff;
+  color: #738090;
+  text-align: center;
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .vedam-files-toolbar {
+    align-items: center;
+  }
+  .vedam-files-search {
+    flex: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .css-1sa4n4o > .css-1wa3lbr:has(.vedam-show-files-button) {
+    flex-wrap: wrap;
+  }
+  .vedam-show-files-button {
+    order: 2;
+    margin-left: 0;
+  }
+  .css-1sa4n4o > .css-1wa3lbr:has(.vedam-show-files-button) > .css-15q6t04 {
+    order: 3;
+    margin-left: 0;
+  }
+  .vedam-files-header {
+    gap: 12px;
+  }
+  .vedam-tree-date,
+  .vedam-tree-month-meta {
+    display: none;
+  }
+  .vedam-tree-month-children {
+    margin-left: 18px;
+    padding-left: 8px;
+  }
+  .vedam-tree-class-children {
+    margin-left: 18px;
+    padding-left: 8px;
+  }
+}
+
+/* The problem-page switch remains visible in both the original and reskinned views. */
+#vedam-reskin-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 5px 10px;
+  border: 1px solid #a9a9b2;
+  border-radius: 8px;
+  background: #fff;
+  color: #292934;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+#vedam-reskin-toggle:hover { border-color: #8a18ff; }
+#vedam-reskin-toggle:focus-visible { outline: 2px solid #8a18ff; outline-offset: 2px; }
+#vedam-reskin-toggle .vedam-reskin-toggle-track {
+  display: inline-flex;
+  align-items: center;
+  width: 28px;
+  height: 16px;
+  padding: 2px;
+  border-radius: 99px;
+  background: #a9a9b2;
+  transition: background-color 150ms ease;
+}
+
+#vedam-reskin-toggle .vedam-reskin-toggle-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px #0003;
+  transition: transform 150ms ease;
+}
+
+#vedam-reskin-toggle[aria-checked="true"] .vedam-reskin-toggle-track { background: #8a18ff; }
+#vedam-reskin-toggle[aria-checked="true"] .vedam-reskin-toggle-thumb { transform: translateX(12px); }
+#vedam-reskin-toggle .vedam-reskin-toggle-state { min-width: 19px; }
+
+html.vedam-reskin #vedam-reskin-toggle {
+  border-color: #46464e;
+  background: #29292d;
+  color: #f4f4f5;
+}
+
+@media (max-width: 760px) {
+  #vedam-reskin-toggle .vedam-reskin-toggle-label { display: none; }
+}
+
+/* Analysis and Design of Algorithms: subject-wide assignment problems. */
+.vedam-show-problems-button {
+  margin-left: 12px;
+}
+
+body.vedam-problems-active .css-1sa4n4o > :not(#vedam-all-problems-page) {
+  display: none !important;
+}
+
+.vedam-problems-progress {
+  min-height: 18px;
+  margin: 3px 0 0;
+  color: #8a18ff;
+  font-size: 12px;
+}
+
+.vedam-problems-ready-count {
+  margin: 5px 0 0;
+  color: #21814b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.vedam-problems-ready-warning {
+  margin: 3px 0 0;
+  color: #b45309;
+  font-size: 12px;
+}
+
+.vedam-problems-toolbar {
+  width: min(100%, 1160px);
+  justify-content: flex-start;
+}
+
+.vedam-problems-filter {
+  min-height: 45px;
+  padding: 0 12px;
+  border: 1px solid #e4e1ed;
+  border-radius: 10px;
+  background: #fff;
+  color: #374151;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.vedam-problems-toolbar .vedam-tree-expand-all {
+  margin-left: auto;
+}
+
+.vedam-problem-tree {
+  width: min(100%, 1160px);
+}
+
+.vedam-problem-class + .vedam-problem-class {
+  border-top: 1px solid #f0edf4;
+}
+
+.vedam-problem-class > .vedam-tree-class-row {
+  min-height: 52px;
+}
+
+.vedam-problem-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 8px;
+  border-radius: 8px;
+}
+
+.vedam-problem-row.is-ready {
+  background: #f3fbf6;
+}
+
+.vedam-problem-check {
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  min-height: 38px;
+  cursor: pointer;
+}
+
+.vedam-problem-check input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #8a18ff;
+  cursor: pointer;
+}
+
+.vedam-problem-check input:focus-visible {
+  outline: 2px solid #8a18ff;
+  outline-offset: 2px;
+}
+
+.vedam-problem-row .vedam-problem-link {
+  flex: 1;
+}
+
+.vedam-problem-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #293748;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.vedam-problem-link:hover,
+.vedam-problem-link:focus-visible {
+  background: #f8f3ff;
+  outline: none;
+}
+
+.vedam-problem-title {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+  color: #245d93;
+  font-weight: 680;
+}
+
+.vedam-problem-difficulty,
+.vedam-problem-status {
+  flex: 0 0 auto;
+  min-width: 78px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vedam-problem-difficulty {
+  background: #eaf8ed;
+  color: #278b3c;
+}
+
+.vedam-problem-difficulty[data-difficulty="MEDIUM"] {
+  background: #fff5d7;
+  color: #a57a12;
+}
+
+.vedam-problem-difficulty[data-difficulty="HARD"] {
+  background: #fff0f0;
+  color: #cf4444;
+}
+
+.vedam-problem-status {
+  background: #f0f1f3;
+  color: #707782;
+}
+
+.vedam-problem-status[data-status="ACCEPTED"] {
+  background: #eaf8ed;
+  color: #278b3c;
+}
+
+.vedam-problem-status[data-status="FAILED"] {
+  background: #fff0f0;
+  color: #d04444;
+}
+
+.vedam-problem-status[data-status="PARTIALLY_ACCEPTED"] {
+  background: #fff6e4;
+  color: #ad811c;
+}
+
+.vedam-problem-link > svg:last-child {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  color: #8a18ff;
+}
+
+@media (max-width: 650px) {
+  .vedam-show-problems-button {
+    margin-left: 0;
+  }
+  .vedam-problems-toolbar {
+    flex-wrap: wrap;
+  }
+  .vedam-problems-toolbar .vedam-files-search {
+    flex: 1 0 100%;
+  }
+  .vedam-problem-link {
+    flex-wrap: wrap;
+  }
+  .vedam-problem-title {
+    flex: 1 0 100%;
+  }
+}
