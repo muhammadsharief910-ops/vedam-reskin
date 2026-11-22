@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Vedam LMS Reskin",
-  "version": "1.6.0",
-  "description": "A sleek dark theme for the Vedam School of Technology LMS — cleaner layout, better aesthetics.",
+  "version": "1.8.0",
+  "description": "A sleek dark theme, unified single-interface course navigator, and upgraded lecture video player for the Vedam School of Technology LMS.",
   "permissions": [],
   "content_scripts": [
     {
@@ -10,8 +10,8 @@
         "*://student.vedam.org/*",
         "*://*.vedam.org/*"
       ],
-      "css": ["content.css"],
-      "js": ["page-cursor-fix.js", "page-monaco-theme.js", "content.js", "page-all-files.js", "page-all-problems.js"],
+      "css": ["content.css", "course-shell.css", "video-player.css"],
+      "js": ["page-cursor-fix.js", "page-monaco-theme.js", "content.js", "page-course-shell.js", "page-video-player.js", "page-all-files.js", "page-all-problems.js"],
       "run_at": "document_start",
       "world": "MAIN"
     }
